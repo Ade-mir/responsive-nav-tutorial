@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bg {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: url(mountains.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.nav {
+  height: 3.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  margin: auto 1rem;
+}
+
+.nav__menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav__menu ul li {
+  list-style: none;
+}
+
+.nav__menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem;
+  display: block;
+}
+
+.nav__menu li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav__hamburger {
+  width: 1.875rem;
+  height: 1.313rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.nav__hamburger__line {
+  height: 0.188rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.625rem;
+  transition: all ease-in-out 0.2s;
+}
+
+@media screen and (max-width: 550px) {
+  .nav__hamburger {
+    display: flex;
+  }
+  .nav__menu {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    top: -13rem;
+    width: 100%;
+    transition: all ease-in-out 0.4s;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav__menu ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem 0 0.6rem;
+  }
+  .nav__menu ul li {
+    text-align: center;
+  }
+  .nav__menu {
+    z-index: -1;
+  }
+  .nav__menu:active {
+    top: 0;
+  }
+  .nav__hamburger.active :nth-child(1) {
+    transform: rotate(45deg) translate(0.45rem, 0.1875rem);
+  }
+  .nav__hamburger.active :nth-child(2) {
+    opacity: 0;
+  }
+  .nav__hamburger.active :nth-child(3) {
+    transform: rotate(-45deg) translate(0.45rem, -0.1875rem);
+  }
+}
